@@ -1,0 +1,6 @@
+/node_modules/
+/public/build/
+# tailwind build css
+/public/index.css
+
+.DS_Store
