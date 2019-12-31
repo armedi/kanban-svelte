@@ -15,7 +15,6 @@
     e.dataTransfer.setData("type", "task");
     e.dataTransfer.setData("task", JSON.stringify(task));
   };
-
 </script>
 
 <div

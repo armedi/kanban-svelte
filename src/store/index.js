@@ -1,11 +1,8 @@
 import { writable, derived } from 'svelte/store'
 import uuid from 'uuid/v1'
 
-const $tasks = writable([])
 
-export const sortedTasks = derived($tasks, tasks => tasks.slice().sort((a, b) => a.updatedAt - b.updatedAt))
-
-const { subscribe, update, set } = $tasks
+const { subscribe, update, set } = writable([])
 export const tasks = {
   subscribe,
   add(name) {
@@ -23,3 +20,4 @@ export const tasks = {
   }
 }
 
+export const user = writable(null)

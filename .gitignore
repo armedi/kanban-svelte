@@ -1,6 +1,5 @@
 /node_modules/
-/public/build/
-# tailwind build css
-/public/index.css
+# build files
+/public/bundle.*
 
 .DS_Store

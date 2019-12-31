@@ -1,6 +1,8 @@
 <script>
   import Column from "./Column/index.svelte";
-  import { tasks, sortedTasks } from "../../store";
+  import { tasks } from "../../store";
+
+  $: sortedTasks = $tasks.slice().sort((a, b) => a.updatedAt - b.updatedAt)
 </script>
 
 <style>
@@ -21,12 +23,12 @@
 
 <div class="columns sm:min-h-full">
   <div class="mb-6">
-    <Column status={0} tasks={$sortedTasks.filter(t => t.status === 0)} />
+    <Column status={0} tasks={sortedTasks.filter(t => t.status === 0)} />
   </div>
   <div class="mb-6">
-    <Column status={1} tasks={$sortedTasks.filter(t => t.status === 1)} />
+    <Column status={1} tasks={sortedTasks.filter(t => t.status === 1)} />
   </div>
   <div class="mb-6">
-    <Column status={2} tasks={$sortedTasks.filter(t => t.status === 2)} />
+    <Column status={2} tasks={sortedTasks.filter(t => t.status === 2)} />
   </div>
 </div>
