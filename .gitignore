@@ -1,5 +1,10 @@
 /node_modules/
+
 # build files
 /public/bundle.*
+/public/tailwind.css
 
 .DS_Store
+
+# Local Netlify folder
+.netlify
